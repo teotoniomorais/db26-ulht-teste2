@@ -66,7 +66,7 @@ INSERT INTO PACIENTE
 VALUES
     (N'Paula Lima', '1985-04-12', '920000001', 'paula.lima@example.test', N'Rua das Flores, 10'),
     (N'Nuno Costa', '1990-08-23', '920000002', 'nuno.costa@example.test', N'Av. Central, 20'),
-    (N'Sara Pinto', '2001-02-05', '920000003', 'sara.pinto@example.test', N'Rua Nova, 30');
+    (N'Ana Pinto', '2001-02-05', '920000003', 'ana.pinto@example.test', N'Rua Nova, 30');
 
 DECLARE @MedicoSara INT, @MedicoBreno INT, @PacientePaula INT,
         @PacienteNuno INT, @PacienteAna INT;
