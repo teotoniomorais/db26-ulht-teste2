@@ -68,14 +68,14 @@ VALUES
     (N'Nuno Costa', '1990-08-23', '920000002', 'nuno.costa@example.test', N'Av. Central, 20'),
     (N'Sara Pinto', '2001-02-05', '920000003', 'sara.pinto@example.test', N'Rua Nova, 30');
 
-DECLARE @MedicoSara INT, @MedicoBruno INT, @PacientePaula INT,
+DECLARE @MedicoSara INT, @MedicoBreno INT, @PacientePaula INT,
         @PacienteNuno INT, @PacienteAna INT;
 
 SELECT @MedicoSara = ID FROM MEDICO WHERE NumeroOrdem = 'OM-1001';
 SELECT @MedicoBreno = ID FROM MEDICO WHERE NumeroOrdem = 'OM-1002';
 SELECT @PacientePaula = ID FROM PACIENTE WHERE Email = 'paula.lima@example.test';
 SELECT @PacienteNuno = ID FROM PACIENTE WHERE Email = 'nuno.costa@example.test';
-SELECT @PacienteAna = ID FROM PACIENTE WHERE Email = 'Ana.pinto@example.test';
+SELECT @PacienteAna = ID FROM PACIENTE WHERE Email = 'sara.pinto@example.test';
 
 INSERT INTO CONSULTA
     (MedicoID, PacienteID, DataHora, Motivo, Observacoes, Estado)
@@ -153,9 +153,9 @@ ORDER BY c.DataHora;
 
 -- 4. Corrige a identificacao (nome e contacto) do paciente.
 UPDATE PACIENTE
-SET Nome = N'Nuno ',
+SET Nome = N'Nuno Rodrigues',
     Telefone = '920000022',
-    Email = 'nuno.faria@example.test'
+    Email = 'nuno.rodrigues@example.test'
 WHERE ID = @PacienteNuno;
 
 PRINT N'Historico do paciente apos a correcao da identificacao:';
